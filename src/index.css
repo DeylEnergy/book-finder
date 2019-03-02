@@ -46,3 +46,72 @@ input {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+/* Book Styles */
+#books {
+  width: 90%;
+  margin-top: 30px;
+  font-size: 14px;
+}
+.book {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.book__title {
+  width: 95%;
+  padding: 5px 0 0 10px;
+}
+.book__title h2 {
+  font-size: 17px;
+  text-align: justify;
+  margin-bottom: 0; 
+}
+.book__title a {
+  text-decoration: none;
+  color: #6d4c41 ;
+}
+.book__img-block {
+  width: 47%;
+}
+.book__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.book__desc {
+  width: 49%;
+  padding: 0 0 0 10px;
+}
+.book__desc p {
+  width: 95%;
+  text-align: justify;
+  margin-top: 10px;
+  color: #3e2723;
+}
+.book__info {
+  padding-top: 10px;
+}
+.book__author {
+  color: #fff;
+  background: #000;
+  padding: 5px 5px 3px 5px;
+  cursor: pointer;
+}
+.book__publisher {
+  color: #fff;
+  background: #795548;
+  padding: 5px 5px 3px 5px;
+  cursor: pointer;
+}
+.book__published {
+  color: #fff;
+  background: #a1887f;
+  padding: 5px 5px 3px 5px;
+  cursor: pointer;
+}
