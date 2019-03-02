@@ -85,6 +85,7 @@ class Base extends React.Component {
         <div id="content">
           <Search />
         </div>
+          <Books />
       </div>
     );
   }
