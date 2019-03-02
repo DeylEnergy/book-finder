@@ -14,7 +14,44 @@ class Search extends React.Component {
 }
 
 class Book extends React.Component {
+  render() {
+    const {
+      title,
+      link,
+      imgLink,
+      imgAlt,
+      author,
+      publisher,
+      published,
+      desc
+    } = this.props
+    return (
+      <div className="book">
+        <div className="book__title">
+          <h2><a href={link}>{title}</a></h2>
+        </div>
 
+        <div className="book__img-block">
+          <img src={imgLink} alt={imgAlt} className="book__img" />
+        </div>
+  
+        <div className="book__desc">
+          <div className="book__info">
+            <span className="book__author" title="author">{author}</span>
+            &nbsp;
+            <span className="book__publisher">
+              {publisher}
+            </span>
+            &nbsp;
+            <span className="book__published">{published}</span>
+          </div>
+          <p>
+            {desc} 
+          </p>
+        </div>
+      </div>
+    );
+  }
 }
 
 class Books extends React.Component {
