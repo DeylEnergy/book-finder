@@ -55,7 +55,24 @@ class Book extends React.Component {
 }
 
 class Books extends React.Component {
-
+  render() {
+    return (
+      <div id="books">
+        <Book 
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec tristique sem."
+          link="https://books.google.com/"
+          imgLink="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Placeholder_book.svg/2000px-Placeholder_book.svg.png"
+          imgAlt="Book Title"
+          author="John Doe" 
+          publisher="Web Dev's Stuff"
+          published="1970"
+          desc="
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec tristique sem. Suspendisse at est vitae velit malesuada rutrum sed sed neque. Fusce enim nisi, dapibus vel gravida nec, vehicula ac libero. Aliquam erat volutpat. Donec sollicitudin metus at arcu malesuada pharetra. Nullam blandit turpis nec arcu bibendum, eu tincidunt est euismod.
+          "
+        />
+      </div>
+    ) 
+  }
 }
 
 class Base extends React.Component {
