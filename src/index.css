@@ -102,6 +102,13 @@ input {
   padding: 2px 5px 2px 5px;
   cursor: pointer;
 }
+footer {
+  color: #3e2723;
+}
+footer a {
+  color: #ff6f00;
+  text-decoration: none;
+}
 @media only screen and (min-width: 900px) {
   .book {
     width: 49%;
