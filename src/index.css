@@ -77,15 +77,16 @@ input {
   color: #6d4c41 ;
 }
 .book__img-block {
-  width: 47%;
+  width: 128px;
+  margin: 10px;
 }
 .book__img {
   display: block;
-  width: 100%;
+  width: 128px;
   height: auto;
 }
 .book__desc {
-  width: 49%;
+  width: 60%;
   padding: 0 0 0 10px;
 }
 .book__desc p {
