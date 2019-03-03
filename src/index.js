@@ -111,6 +111,7 @@ class Base extends React.Component {
           <div id="books"> 
             <Books volumes={this.state.found} />
           </div>
+        <footer>Made by <a href="https://deylenergy.github.io/portfolio">Deyl Energy</a></footer>
       </div>
     );
   }
