@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {fetchBooks} from './fetch-books';
 import './index.css';
 
 class Search extends React.Component {
@@ -90,7 +91,11 @@ class Base extends React.Component {
     })
   }
   handleClick(){
-    // remote endpoint will be called
+    const {query} = this.state;
+    fetchBooks(query)
+      .then((found) => {
+        this.setState({found});
+      })
   }
   render() {
     return (
