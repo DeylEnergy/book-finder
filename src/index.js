@@ -78,6 +78,7 @@ class Base extends React.Component {
     super(props);
     this.state = {
       query: '',
+      loading: false,
       found: []
     };
     this.counter = 0;
