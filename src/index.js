@@ -110,7 +110,7 @@ class Base extends React.Component {
           />
         </div>
           <div id="books"> 
-            <Books volumes={this.state.found} />
+            <Books volumes={this.state.found} loading={this.state.loading} />
           </div>
         <footer>Made by <a href="https://deylenergy.github.io/portfolio">Deyl Energy</a></footer>
       </div>
