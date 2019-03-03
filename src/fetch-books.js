@@ -28,8 +28,8 @@ const extractInfo = (res) => {
   });
 }
 
-export function fetchBooks (){
-  const url = 'https://www.googleapis.com/books/v1/volumes?q=chingu';
+export function fetchBooks (query){
+  const url = 'https://www.googleapis.com/books/v1/volumes?q=' + query;
   return fetch(url)
           .then((res) => res.json())
           .then(extractInfo)
