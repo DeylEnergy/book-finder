@@ -37,18 +37,18 @@ class Book extends React.Component {
         </div>
   
         <div className="book__desc">
-          <div className="book__info">
-            <span className="book__author" title="author">{author || 'Not Labeled'}</span>
-            &nbsp;
-            <span className="book__publisher">
-              {publisher}
-            </span>
-            &nbsp;
-            <span className="book__published">{published || 'n/a'}</span>
+          <div className="book__field" title="author">
+            <strong>Author:</strong> {author || 'Not Labeled'}
           </div>
-          <p>
-            {desc} 
-          </p>
+          <div className="book__field">
+            <strong>Publisher:</strong> {publisher}
+          </div>
+          <div className="book__field">
+            <strong>Published:</strong> {published || 'n/a'}
+          </div>
+          <div className="book__field">
+          {desc} 
+          </div>
         </div>
       </div>
     );
@@ -111,6 +111,7 @@ class Base extends React.Component {
           <div id="books"> 
             <Books volumes={this.state.found} />
           </div>
+        <footer>Made by <a href="https://deylenergy.github.io/portfolio">Deyl Energy</a></footer>
       </div>
     );
   }
