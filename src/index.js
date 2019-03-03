@@ -22,6 +22,7 @@ class Search extends React.Component {
         </div>
         <input 
           type="text" 
+          value={this.props.query}
           onChange={this.props.onChange} 
           placeholder="Type author, book name, subject..."  
         />
