@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {fetchBooks} from './fetch-books';
 import './index.css';
+import preloaderImg from './img/spinner.gif';
 
 class Search extends React.Component {
   render() {
@@ -57,19 +58,34 @@ class Book extends React.Component {
 
 class Books extends React.Component {
   render() {
-    return this.props.volumes.map((book, id) => (    
-      <Book
-        key={id} 
-        title={book.title}
-        link={book.link}
-        author={book.author}
-        imgLink={book.imgLink}
-        imgAlt={book.title}
-        publisher={book.publisher}
-        published={book.published}
-        desc={book.desc}
-      />           
-    ));
+    if (this.props.loading){
+      return (
+        <div className="preloader">
+          <img src={preloaderImg} alt="Preloader" />
+          <div className="preloader__text">
+            Content is loading...
+          </div>
+        </div>
+      );
+    } else if(this.props.volumes.length > 1){
+      return this.props.volumes.map((book, id) => (    
+        <Book
+          key={id} 
+          title={book.title}
+          link={book.link}
+          author={book.author}
+          imgLink={book.imgLink}
+          imgAlt={book.title}
+          publisher={book.publisher}
+          published={book.published}
+          desc={book.desc}
+        />           
+      ));
+    } else {
+      return (
+        <div className="flash-info">Nothing to show...</div>
+      );
+    }
   }
 }
 
@@ -78,6 +94,7 @@ class Base extends React.Component {
     super(props);
     this.state = {
       query: '',
+      loading: false,
       found: []
     };
     this.counter = 0;
@@ -90,9 +107,10 @@ class Base extends React.Component {
   handleClick(){
     const {query} = this.state;
     if (!query) return;
+    this.setState({loading: true});
     fetchBooks(query)
       .then((found) => {
-        this.setState({found});
+        this.setState({found, loading: false});
       })
   }
   render() {
@@ -109,7 +127,7 @@ class Base extends React.Component {
           />
         </div>
           <div id="books"> 
-            <Books volumes={this.state.found} />
+            <Books volumes={this.state.found} loading={this.state.loading} />
           </div>
         <footer>Made by <a href="https://deylenergy.github.io/portfolio">Deyl Energy</a></footer>
       </div>

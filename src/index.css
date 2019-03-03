@@ -102,6 +102,23 @@ input {
   padding: 2px 5px 2px 5px;
   cursor: pointer;
 }
+.flash-info {
+  text-align: center;
+  color: #bcaaa4;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.preloader__text {
+  padding-top: 5px;
+}
 footer {
   color: #3e2723;
 }
