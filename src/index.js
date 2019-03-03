@@ -132,7 +132,8 @@ class Base extends React.Component {
   }
   handleClear() {
     this.setState({
-      query: ''
+      query: '',
+      found: []
     });
   }
   render() {
