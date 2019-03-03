@@ -56,6 +56,33 @@ input:focus {
   text-transform: uppercase;
   cursor: pointer;
 }
+.clear {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 1;
+}
+.clear:hover {
+  opacity: 1;
+}
+.clear__left {
+  background: #ccc;
+  height: 5px;
+  width: 100%;
+  transform: rotate(-45deg) translate(-10px, 8px);
+}
+.clear__right {
+  background: #ccc;
+  height: 5px;
+  width: 100%;
+  transition: 0.4s;
+  margin-top: 7px;
+  transform: rotate(45deg) translate(0, 0);
+}
 
 /* Book Styles */
 #books {
