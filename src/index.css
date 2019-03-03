@@ -161,6 +161,8 @@ input:focus::placeholder {
 }
 footer {
   color: #3e2723;
+  font-size: 13px;
+  margin: 10px 0 10px 0;
 }
 footer a {
   color: #ff6f00;

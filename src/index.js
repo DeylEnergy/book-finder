@@ -159,7 +159,7 @@ class Base extends React.Component {
           <div id="books"> 
             <Books volumes={this.state.found} loading={this.state.loading} />
           </div>
-        <footer>Made by <a href="https://deylenergy.github.io/portfolio">Deyl Energy</a></footer>
+        <footer>Made by <a href="https://deylenergy.github.io/portfolio" rel="noopener noreferrer" target="_blank">Deyl Energy</a></footer>
       </div>
     );
   }
