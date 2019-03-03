@@ -42,6 +42,9 @@ input:focus {
 ::placeholder {
   color: #bdbdbd;
 }
+input:focus::placeholder {
+  color: transparent;
+}
 #search-btn {
   position: absolute;
   right: 2px;
