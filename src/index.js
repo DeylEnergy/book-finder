@@ -8,7 +8,30 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-block">
-        <input type="text" onChange={this.props.onChange} />
+        <div 
+          className="clear" 
+          style={{
+            'display': ( 
+              this.props.query.length > 0 ? 'block' : 'none'
+            )
+          }}
+          onClick={this.props.onClear}
+        >
+          <div className="clear__left"></div>
+          <div className="clear__right"></div>
+        </div>
+        <input 
+          type="text" 
+          value={this.props.query}
+          onChange={this.props.onChange}
+          onKeyPress={(e) => {
+            // imitating button click on tapping Enter key
+            if (e.key === 'Enter'){
+              this.props.onClick();
+            }
+          }} 
+          placeholder="Type author, book name, subject..."  
+        />
         <button id="search-btn" onClick={this.props.onClick}>Search</button>
       </div>
     );
@@ -113,6 +136,12 @@ class Base extends React.Component {
         this.setState({found, loading: false});
       })
   }
+  handleClear() {
+    this.setState({
+      query: '',
+      found: []
+    });
+  }
   render() {
     return (
       <div id="wrapper">
@@ -123,7 +152,8 @@ class Base extends React.Component {
           <Search 
             onChange={(e) => this.handleChange(e)}
             query={this.state.query} 
-            onClick={() => this.handleClick()} 
+            onClick={() => this.handleClick()}
+            onClear={() => this.handleClear()} 
           />
         </div>
           <div id="books"> 

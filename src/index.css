@@ -32,6 +32,18 @@ input {
   font-size: 18px;
   color: #424242;
   text-align: center;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+input:focus {
+  outline: none;
+  opacity: 1;
+}
+::placeholder {
+  color: #bdbdbd;
+}
+input:focus::placeholder {
+  color: transparent;
 }
 #search-btn {
   position: absolute;
@@ -41,10 +53,38 @@ input {
   background: #ffa000;
   color: #fff;
   border: none;
+  outline: none;
   border-radius: 3px;
   padding-top: 4px;
   text-transform: uppercase;
   cursor: pointer;
+}
+.clear {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 1;
+}
+.clear:hover {
+  opacity: 1;
+}
+.clear__left {
+  background: #ccc;
+  height: 5px;
+  width: 100%;
+  transform: rotate(-45deg) translate(-10px, 8px);
+}
+.clear__right {
+  background: #ccc;
+  height: 5px;
+  width: 100%;
+  transition: 0.4s;
+  margin-top: 7px;
+  transform: rotate(45deg) translate(0, 0);
 }
 
 /* Book Styles */
