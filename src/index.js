@@ -8,6 +8,18 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-block">
+        <div 
+          className="clear" 
+          style={{
+            'display': ( 
+              this.props.query.length > 0 ? 'block' : 'none'
+            )
+          }}
+          onClick={this.props.onClear}
+        >
+          <div className="clear__left"></div>
+          <div className="clear__right"></div>
+        </div>
         <input 
           type="text" 
           onChange={this.props.onChange} 
@@ -117,6 +129,11 @@ class Base extends React.Component {
         this.setState({found, loading: false});
       })
   }
+  handleClear() {
+    this.setState({
+      query: ''
+    });
+  }
   render() {
     return (
       <div id="wrapper">
@@ -127,7 +144,8 @@ class Base extends React.Component {
           <Search 
             onChange={(e) => this.handleChange(e)}
             query={this.state.query} 
-            onClick={() => this.handleClick()} 
+            onClick={() => this.handleClick()}
+            onClear={() => this.handleClear()} 
           />
         </div>
           <div id="books"> 

@@ -50,6 +50,7 @@ input:focus {
   background: #ffa000;
   color: #fff;
   border: none;
+  outline: none;
   border-radius: 3px;
   padding-top: 4px;
   text-transform: uppercase;
