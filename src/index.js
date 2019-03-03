@@ -8,7 +8,11 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-block">
-        <input type="text" onChange={this.props.onChange} />
+        <input 
+          type="text" 
+          onChange={this.props.onChange} 
+          placeholder="Type author, book name, subject..."  
+        />
         <button id="search-btn" onClick={this.props.onClick}>Search</button>
       </div>
     );
