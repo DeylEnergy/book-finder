@@ -53,7 +53,10 @@ class Book extends React.Component {
     return (
       <div className="book">
         <div className="book__title">
-          <h2><a href={link}>{title}</a></h2>
+          <h2><a 
+                href={link}
+                rel="noopener noreferrer" target="_blank"
+              >{title}</a></h2>
         </div>
 
         <div className="book__img-block">
