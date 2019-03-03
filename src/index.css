@@ -102,6 +102,12 @@ input {
   padding: 2px 5px 2px 5px;
   cursor: pointer;
 }
+.flash-info {
+  text-align: center;
+  color: #bcaaa4;
+  width: 100%;
+  padding-bottom: 20px;
+}
 footer {
   color: #3e2723;
 }
