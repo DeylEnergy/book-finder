@@ -91,9 +91,10 @@ class Base extends React.Component {
   handleClick(){
     const {query} = this.state;
     if (!query) return;
+    this.setState({loading: true});
     fetchBooks(query)
       .then((found) => {
-        this.setState({found});
+        this.setState({found, loading: false});
       })
   }
   render() {
