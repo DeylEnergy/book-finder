@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {fetchBooks} from './fetch-books';
 import './index.css';
 
 class Search extends React.Component {
@@ -37,13 +38,13 @@ class Book extends React.Component {
   
         <div className="book__desc">
           <div className="book__info">
-            <span className="book__author" title="author">{author}</span>
+            <span className="book__author" title="author">{author || 'Not Labeled'}</span>
             &nbsp;
             <span className="book__publisher">
               {publisher}
             </span>
             &nbsp;
-            <span className="book__published">{published}</span>
+            <span className="book__published">{published || 'n/a'}</span>
           </div>
           <p>
             {desc} 
@@ -56,22 +57,19 @@ class Book extends React.Component {
 
 class Books extends React.Component {
   render() {
-    return (
-      <div id="books">
-        <Book 
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec tristique sem."
-          link="https://books.google.com/"
-          imgLink="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Placeholder_book.svg/2000px-Placeholder_book.svg.png"
-          imgAlt="Book Title"
-          author="John Doe" 
-          publisher="Web Dev's Stuff"
-          published="1970"
-          desc="
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec tristique sem. Suspendisse at est vitae velit malesuada rutrum sed sed neque. Fusce enim nisi, dapibus vel gravida nec, vehicula ac libero. Aliquam erat volutpat. Donec sollicitudin metus at arcu malesuada pharetra. Nullam blandit turpis nec arcu bibendum, eu tincidunt est euismod.
-          "
-        />
-      </div>
-    ) 
+    return this.props.volumes.map((book, id) => (    
+      <Book
+        key={id} 
+        title={book.title}
+        link={book.link}
+        author={book.author}
+        imgLink={book.imgLink}
+        imgAlt={book.title}
+        publisher={book.publisher}
+        published={book.published}
+        desc={book.desc}
+      />           
+    ));
   }
 }
 
@@ -79,7 +77,7 @@ class Base extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: 'DD',
+      query: '',
       found: []
     };
     this.counter = 0;
@@ -90,7 +88,12 @@ class Base extends React.Component {
     })
   }
   handleClick(){
-    // remote endpoint will be called
+    const {query} = this.state;
+    if (!query) return;
+    fetchBooks(query)
+      .then((found) => {
+        this.setState({found});
+      })
   }
   render() {
     return (
@@ -105,7 +108,9 @@ class Base extends React.Component {
             onClick={() => this.handleClick()} 
           />
         </div>
-          <Books  />
+          <div id="books"> 
+            <Books volumes={this.state.found} />
+          </div>
       </div>
     );
   }
