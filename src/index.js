@@ -6,8 +6,8 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-block">
-        <input type="text" />
-        <button id="search-btn">Search</button>
+        <input type="text" onChange={this.props.onChange} />
+        <button id="search-btn" onClick={this.props.onClick}>Search</button>
       </div>
     );
   }
@@ -76,6 +76,22 @@ class Books extends React.Component {
 }
 
 class Base extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: 'DD',
+      found: []
+    };
+    this.counter = 0;
+  }
+  handleChange(e) {
+    this.setState({
+      query: e.target.value
+    })
+  }
+  handleClick(){
+    // remote endpoint will be called
+  }
   render() {
     return (
       <div id="wrapper">
@@ -83,9 +99,13 @@ class Base extends React.Component {
           <h1>Book Finder</h1>
         </header>
         <div id="content">
-          <Search />
+          <Search 
+            onChange={(e) => this.handleChange(e)}
+            query={this.state.query} 
+            onClick={() => this.handleClick()} 
+          />
         </div>
-          <Books />
+          <Books  />
       </div>
     );
   }
