@@ -52,6 +52,9 @@ input {
   width: 90%;
   margin-top: 30px;
   font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .book {
   background: rgba(255, 255, 255, 0.7);
