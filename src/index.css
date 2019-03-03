@@ -32,6 +32,12 @@ input {
   font-size: 18px;
   color: #424242;
   text-align: center;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+input:focus {
+  outline: none;
+  opacity: 1;
 }
 ::placeholder {
   color: #bdbdbd;
