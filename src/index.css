@@ -188,3 +188,8 @@ footer a {
     width: 90%;
   }
 }
+@media only screen and (max-width: 320px) {
+  input {
+    width: 300px;
+  }
+}
