@@ -33,6 +33,9 @@ input {
   color: #424242;
   text-align: center;
 }
+::placeholder {
+  color: #bdbdbd;
+}
 #search-btn {
   position: absolute;
   right: 2px;
