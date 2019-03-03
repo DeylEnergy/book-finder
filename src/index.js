@@ -23,7 +23,13 @@ class Search extends React.Component {
         <input 
           type="text" 
           value={this.props.query}
-          onChange={this.props.onChange} 
+          onChange={this.props.onChange}
+          onKeyPress={(e) => {
+            // imitating button click on tapping Enter key
+            if (e.key === 'Enter'){
+              this.props.onClick();
+            }
+          }} 
           placeholder="Type author, book name, subject..."  
         />
         <button id="search-btn" onClick={this.props.onClick}>Search</button>
