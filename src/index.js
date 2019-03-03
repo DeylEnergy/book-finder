@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {fetchBooks} from './fetch-books';
 import './index.css';
+import preloaderImg from './img/spinner.gif';
 
 class Search extends React.Component {
   render() {
