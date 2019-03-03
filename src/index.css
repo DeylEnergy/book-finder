@@ -102,3 +102,8 @@ input {
   padding: 2px 5px 2px 5px;
   cursor: pointer;
 }
+@media only screen and (min-width: 900px) {
+  .book {
+    width: 49%;
+  }
+}
