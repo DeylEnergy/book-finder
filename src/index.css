@@ -190,6 +190,12 @@ footer a {
 }
 @media only screen and (max-width: 320px) {
   input {
-    width: 300px;
+    width: 280px;
+  }
+  #search-btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 2px;
   }
 }
