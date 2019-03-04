@@ -1,6 +1,5 @@
 const extractInfo = (res) => {
   const {items} = res;
-
   if (!items) return [];
   const dummyImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Placeholder_book.svg/2000px-Placeholder_book.svg.png';
   
@@ -13,7 +12,7 @@ const extractInfo = (res) => {
       pageCount,
     } = info;
     const link = info.previewLink;
-    const imgLink = info.imageLinks.thumbnail || dummyImg;
+    const imgLink = info.imageLinks ? info.imageLinks.thumbnail : dummyImg;
     const author = info.authors;
     const published = info.publishedDate;
     const desc = info.subtitle;
